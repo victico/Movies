@@ -3,12 +3,48 @@
 body{
     margin: 0;
     font-family: 'Fredoka One', cursive;
+    box-sizing: content-box;
 }
 .container{
     display: grid;
     width: 100%;
     grid-template-columns: minmax(auto, auto);
     height: 100vh;
+}
+.loader{
+    display: flex;
+    width: 0px;
+    opacity: 0;
+    height: 100vh;
+    justify-content: center;
+    background-color: #1d252c;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    animation: faded 6.2s linear;
+    will-change: width, opacity;
+    
+}
+.loader__container{
+    display: flex;
+}
+.loader__one, .loader__two{
+    font-size: 40px;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    -webkit-text-stroke: 1px rgb(197, 168, 0);
+}
+.loader__one{
+    will-change: transform, opacity;
+    opacity: 0;
+    animation: loader-one 5s linear ;
+}
+.loader__two{
+    width: 0em;
+    overflow: hidden;
+    animation: loader-two 1.8s 2.8s linear  reverse;
+    will-change: width;
 }
 .container__hero{
     display: grid;
@@ -172,6 +208,56 @@ aside .nav__link:last-child{
         transform: scale(1.05);
     }
 }
+@keyframes loader-one{
+    0%{
+        opacity: 1;
+        transform: translateY(-3000px);
+    }
+    40%{
+        transform: translateY(20px);
+    }
+    45%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    95%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-30000px);
+    }
+}@keyframes faded{
+    0%{
+        opacity: 1;
+        width: 100%;
+    }
+    99%{
+        opacity: 1;
+        width: 100%;
+    }
+    100%{
+        opacity: 0;
+        width: 0px;
+    }
+}
+@keyframes loader-two{
+    0%{
+        width: 0em;
+    }
+    10%{
+        width: 6em;
+    }
+    90%{
+        width: 6em;
+    }
+    100%{
+        width: 0em;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .content__side{
         grid-gap: 10px;

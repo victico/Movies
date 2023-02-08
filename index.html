@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-    <section class="loader">
+    <!-- <section class="loader">
         <div class="loader__container">
             <div class="loader__one">
                 V
@@ -17,7 +17,7 @@
                 MOVIES
             </div>
         </div>
-    </section>
+    </section> -->
     <main class="container">
         <section class="container__hero">
             <header class="header">
@@ -64,13 +64,17 @@
                       <p>Ajustes</p> 
                 </a>
             </aside>
-            <section class="content" style="">
+            <section class="content">
                 <div class="content__main"> 
                     <h1 class="content__title">
                         Ahora en el cine
                     </h1>
                     <div class="content__side" >
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner.jpg" alt="">
                             </figure>
@@ -85,7 +89,11 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner2.jpg" alt="">
                             </figure>
@@ -100,7 +108,11 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner.jpg" alt="">
                             </figure>
@@ -122,7 +134,11 @@
                         Aclamada por la critica
                     </h1>
                     <div class="content__side" >
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner.jpg" alt="">
                             </figure>
@@ -137,7 +153,11 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner2.jpg" alt="">
                             </figure>
@@ -152,7 +172,11 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner.jpg" alt="">
                             </figure>
@@ -174,7 +198,11 @@
                         No te la debes perder
                     </h1>
                     <div class="content__side" >
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner.jpg" alt="">
                             </figure>
@@ -189,7 +217,11 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner2.jpg" alt="">
                             </figure>
@@ -204,7 +236,11 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="" class="post">
+                        <a class="post">
+                            <div class="content__interaction" >
+                                <div class="content__interaction--like" onclick="liked(this)">
+                                </div>                        
+                            </div>
                             <figure class="post__image">
                                 <img src="./src/images/banner.jpg" alt="">
                             </figure>
@@ -224,5 +260,6 @@
             </section>
         </section>
     </main>
+    <script src="./src/js/index.js"></script>
 </body>
 </html>

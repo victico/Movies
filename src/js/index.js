@@ -1,1 +1,4 @@
-import '../css/style.css';
+// import '../css/style.css';
+function liked(elemento){
+    elemento.classList.toggle('liked')
+}

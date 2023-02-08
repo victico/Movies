@@ -21,7 +21,7 @@ body{
     align-items: center;
     position: absolute;
     z-index: 2;
-    animation: faded 6.2s linear;
+    animation: faded 5s linear;
     will-change: width, opacity;
     
 }
@@ -38,12 +38,12 @@ body{
 .loader__one{
     will-change: transform, opacity;
     opacity: 0;
-    animation: loader-one 5s linear ;
+    animation: loader-one 4.3s linear ;
 }
 .loader__two{
     width: 0em;
     overflow: hidden;
-    animation: loader-two 1.8s 2.8s linear  reverse;
+    animation: loader-two 1.5s 2.2s linear  reverse;
     will-change: width;
 }
 .container__hero{
@@ -164,6 +164,26 @@ aside .nav__link:last-child{
     transition: 0.5s;
     will-change: opacity;
 }
+.content__interaction{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    top: -15px
+}
+.content__interaction--like{
+    width: 70px;
+    height: 70px;
+    background: url('https://raw.githubusercontent.com/livebloggerofficial/Twitter-Like-Animation/main/images/heart.png');
+    background-size: cover;
+    cursor: pointer;
+}
+.content__interaction--like.liked{
+    animation: like .8s steps(28) forwards;
+}
+.content__interaction--like:hover{
+    color: red;
+}
 .content__text h2,.content__text h4 {
     margin: 5px 0px;
     
@@ -186,40 +206,21 @@ aside .nav__link:last-child{
     opacity: 1;
 }
 .post:hover{
-    animation: lops 2s linear infinite alternate;
+    transform: scale(1.05);
 }
-@keyframes lops {
-    0%{
-        transform: scale(1.0);
-    }
-    20%{
-        transform: scale(1.05);
-    }
-    40%{
-        transform: scale(1.0);
-    }
-    60%{
-        transform: scale(1.05);
-    }
-    80%{
-        transform: scale(1.0);
-    }
-    100%{
-        transform: scale(1.05);
-    }
-}
+
 @keyframes loader-one{
     0%{
         opacity: 1;
         transform: translateY(-3000px);
     }
-    40%{
+    30%{
         transform: translateY(20px);
     }
-    45%{
+    35%{
         transform: translateY(-10px);
     }
-    50%{
+    40%{
         transform: translateY(0px);
     }
     95%{
@@ -234,8 +235,11 @@ aside .nav__link:last-child{
         opacity: 1;
         width: 100%;
     }
-    99%{
+    80%{
         opacity: 1;
+        
+    }
+    99%{
         width: 100%;
     }
     100%{
@@ -255,6 +259,14 @@ aside .nav__link:last-child{
     }
     100%{
         width: 0em;
+    }
+}
+@keyframes like {
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: right;
     }
 }
 

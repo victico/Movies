@@ -56,12 +56,16 @@ body{
     
 }
 .header{
-    box-shadow: 0px 2px 10px 5px #a9a7a7;
+    position: fixed;
+    width: 100%;
+    height: 83px;
+    z-index: 100;
     background: #1d252c;
     grid-area: header;
     align-items: center;
     display: grid;
     grid-template-areas: "logo search search user";
+    box-shadow: 0px 1px 7px 3px #000000e3;
 }
 .sidebar{
     grid-area: sidebar;
@@ -76,6 +80,8 @@ body{
 .content{
     grid-area: content;
     padding: 0px 5px;
+    width: 165vh;
+    padding-bottom: 30px;
 }
 .logo{
    grid-area: logo;
@@ -135,18 +141,79 @@ aside .nav__link:last-child{
     padding-bottom: 25px;
 }
 .content__side{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(200px, 380px);
-    justify-content: center;
-    grid-gap: 30px ;
+    display: flex;
     margin-top: 20px;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
+    overflow: hidden;
+    position: relative;
+    padding-left: 20px;
+}
+/* .content__side::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.content__side::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.content__side::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+    transition: all 0.5s;
+}
+
+.content__side::-webkit-scrollbar-track {
+    border-radius: 10px;  
+} */
+html::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+html::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+html::-webkit-scrollbar:vertical {
+    width: 3px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 0px solid #f1f2f3;
+    transition: all 0.5s;
+}
+
+html::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+.content__side::after{
+    content: '';
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, #fff 100%);
+    will-change: opacity;
+    pointer-events: none;
+}
+.content__side::-webkit-scrollbar-thumb:hover{
+    visibility: visible;
+    background-color: red;
+}
+
+.content__side--movies{
+    display: flex;
+    grid-auto-flow: column;
+
+    justify-content: start;
+    
 }
 .content__main{
     padding-top: 10px;
 }
 .content__title{
-    padding: 0px 10vh;
+    padding: 0px 2vh;
     margin: 10px 0px;
 }
 .content__text{
@@ -163,13 +230,15 @@ aside .nav__link:last-child{
     opacity: 0;
     transition: 0.5s;
     will-change: opacity;
+    height: 165px;
 }
 .content__interaction{
     position: absolute;
     display: flex;
     width: 100%;
     justify-content: end;
-    top: -15px
+    top: -5px;
+    right: -10px;
 }
 .content__interaction--like{
     width: 70px;
@@ -188,19 +257,21 @@ aside .nav__link:last-child{
     margin: 5px 0px;
     
 }
-.content__text h4{
-    font-size: 12px;
-}
+
 .post{
     position: relative;
+    margin-right: 25px;
+    transform-origin: center;
+    transition: 0.8s;
 }
 .post__image{
     margin: 0px;
+    
 }
 .post__image img{
-    width: 100%;
-    height: 185px;
+    height: 420px;
     vertical-align: top;
+    width: 300px;
 }
 .post:hover .content__text{
     opacity: 1;
@@ -271,9 +342,10 @@ aside .nav__link:last-child{
 }
 
 @media screen and (max-width: 768px) {
-    .content__side{
+    .content__side--movies{
         grid-gap: 10px;
         grid-auto-flow: row;
+        justify-content: center;
     }
     .content__title{
         padding: 0px 1vh;
